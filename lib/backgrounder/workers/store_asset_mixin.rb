@@ -45,6 +45,15 @@ module CarrierWave
 
         # Set cloud dir for temp
         @cloud_cache_path  = File.join(CarrierWave::Uploader::Base.asset_host, asset.cache_dir, asset_tmp)
+        puts "====worker.store_directories============="
+        Rails.logger.error "====worker.store_directories============="
+
+        puts @cloud_cache_path
+        Rails.logger.error @cloud_cache_path
+
+
+        puts "====worker.store_directories============="
+        Rails.logger.error "====worker.store_directories============="
 
         # Create a dir if not exists
         dirname = File.dirname(@cache_path)
