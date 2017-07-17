@@ -19,6 +19,8 @@ module CarrierWave
           record.send :"process_#{column}_upload=", true
           record.send :"#{column}_tmp=", nil
           record.send :"#{column}_processing=", false if record.respond_to?(:"#{column}_processing")
+          puts "!!!!!!!!!!!!!!!!!========="
+          Rails.logger.error "!!!!!!!!!!12312312!!!!!!!========="
           File.open(cache_path) { |f| record.send :"#{column}=", f }
           if record.save!
             FileUtils.rm_r(tmp_directory, :force => true)
