@@ -44,7 +44,7 @@ module CarrierWave
         @tmp_directory   = File.join(cache_directory, asset_tmp.split("/").first)
 
         # Set cloud dir for temp
-        @cloud_cache_path  = File.join(CarrierWave::Uploader::Base.asset_host, CarrierWave::Uploader::Base.fog_directory, asset.cache_dir, asset_tmp)
+        @cloud_cache_path  = File.join(CarrierWave::Uploader::Base.asset_host, asset.cache_dir, asset_tmp)
 
         # Create a dir if not exists
         dirname = File.dirname(@cache_path)
